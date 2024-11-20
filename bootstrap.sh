@@ -16,5 +16,5 @@ do
     opm alpha render-template basic -o yaml "catalog/v${VERSION}/catalog-template.yaml" > "catalog/v${VERSION}/file-integrity-operator/catalog.yaml"
 
     echo "Building locally to ensure it works"
-    podman build -t "fio-fbc-${VERSION}" -f "catalog/v${VERSION}/Containerfile" "catalog/v${VERSION}/"
+    podman build -t "fio-fbc-${VERSION}" -f "catalog/v${VERSION}/Containerfile" "catalog/v${VERSION}/" && rm -rf "./catalog-migrate-${VERSION}"
 done
