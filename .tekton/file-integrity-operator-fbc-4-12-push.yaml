@@ -344,7 +344,8 @@ spec:
       optional: true
     - name: netrc
       optional: true
-  taskRunTemplate: {}
+  taskRunTemplate:
+    serviceAccountName: build-pipeline-file-integrity-operator-fbc-4-12
   workspaces:
   - name: git-auth
     secret:
