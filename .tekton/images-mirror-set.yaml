@@ -1,0 +1,12 @@
+apiVersion: operator.openshift.io/v1alpha1
+kind: ImageDigestMirrorSet
+metadata:
+  name: file-integrity-operator-mirror-set
+spec:
+  imageDigestMirrors:
+  - mirrors:
+    - quay.io/redhat-user-workloads/ocp-isc-tenant/file-integrity-operator-bundle
+    source: registry.redhat.io/compliance/openshift-file-integrity-operator-bundle
+  - mirrors:
+    - quay.io/redhat-user-workloads/ocp-isc-tenant/file-integrity-operator
+    source: registry.redhat.io/compliance/openshift-file-integrity-rhel8-operator
