@@ -351,7 +351,7 @@ relatedImages:
     name: operator
 schema: olm.bundle
 ---
-image: registry.redhat.io/compliance/openshift-file-integrity-operator-bundle@sha256:a88e03c623dd9e0e0b09450869d9edb94cad98dc88f99d0c3078458e950f6b6b
+image: registry.redhat.io/compliance/openshift-file-integrity-operator-bundle@sha256:4fc37a20974c89191f0c515f4abb30b26a2f11641682e2932fefed3850ae3a2c
 name: file-integrity-operator.v1.3.6
 package: file-integrity-operator
 properties:
@@ -400,7 +400,7 @@ properties:
     value:
       data: eyJhcGlWZXJzaW9uIjoidjEiLCJraW5kIjoiU2VydmljZUFjY291bnQiLCJtZXRhZGF0YSI6eyJjcmVhdGlvblRpbWVzdGFtcCI6bnVsbCwibmFtZSI6ImZpbGUtaW50ZWdyaXR5LW9wZXJhdG9yLW1ldHJpY3MifX0=
 relatedImages:
-  - image: registry.redhat.io/compliance/openshift-file-integrity-operator-bundle@sha256:a88e03c623dd9e0e0b09450869d9edb94cad98dc88f99d0c3078458e950f6b6b
+  - image: registry.redhat.io/compliance/openshift-file-integrity-operator-bundle@sha256:4fc37a20974c89191f0c515f4abb30b26a2f11641682e2932fefed3850ae3a2c
     name: ""
   - image: registry.redhat.io/compliance/openshift-file-integrity-rhel8-operator@sha256:3695c9ea20bd252b107fb04a191af8a68ff341883076a1b153ef1a9eb6ecad93
     name: ""
