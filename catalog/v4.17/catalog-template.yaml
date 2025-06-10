@@ -51,7 +51,7 @@ entries:
   schema: olm.bundle
 - image: registry.redhat.io/compliance/openshift-file-integrity-operator-bundle@sha256:48456462a52fbb20281f65e1dad577ce2c61f86d439c28ba88070eaa11351e7e
   schema: olm.bundle
-- image: registry.redhat.io/compliance/openshift-file-integrity-operator-bundle@sha256:929fc73652a5f3b6d983889660c02df9613bf5f61c2ac2bc0d6a5fc775bf7efc
+- image: registry.redhat.io/compliance/openshift-file-integrity-operator-bundle@sha256:3aaaa9a5cd3f9e66e8c487b84e716652f4efad22a83809b138b6462ace886335
   schema: olm.bundle
 schema: olm.template.basic
 

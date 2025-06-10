@@ -3,10 +3,10 @@ set -euo pipefail
 IFS=$'\n\t'
 
 # --- CONFIGURATION ---
-OCP_VERSIONS=(4.12 4.13 4.14 4.15 4.16 4.17 4.18)
+OCP_VERSIONS=(4.12 4.13 4.14 4.15 4.16 4.17 4.18 4.19)
 
 # Old (tag-based) image:
-NEW_BUNDLE="quay.io/redhat-user-workloads/ocp-isc-tenant/file-integrity-operator-bundle:release-1.3"
+NEW_BUNDLE="quay.io/redhat-user-workloads/ocp-isc-tenant/file-integrity-operator-bundle-release:release-1.3"
 
 # New registry/repo to use, but we’ll attach the old image’s actual digest.
 REDHAT_REGISTRY_REPO="registry.redhat.io/compliance/openshift-file-integrity-operator-bundle"
