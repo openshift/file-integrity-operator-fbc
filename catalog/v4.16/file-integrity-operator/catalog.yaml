@@ -403,5 +403,7 @@ relatedImages:
   - image: registry.redhat.io/compliance/openshift-file-integrity-operator-bundle@sha256:3aaaa9a5cd3f9e66e8c487b84e716652f4efad22a83809b138b6462ace886335
     name: ""
   - image: registry.redhat.io/compliance/openshift-file-integrity-rhel8-operator@sha256:28d1be4d42899671f3f181aeb955d537fe334a78dc41aecd80fdabe3898857fb
-    name: ""
+    name: operator
+  - image: registry.redhat.io/compliance/openshift-file-integrity-rhel8-operator@sha256:28d1be4d42899671f3f181aeb955d537fe334a78dc41aecd80fdabe3898857fb
+    name: file-integrity-operator
 schema: olm.bundle
