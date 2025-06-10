@@ -3,10 +3,10 @@ set -euo pipefail
 IFS=$'\n\t'
 
 # --- CONFIGURATION ---
-OCP_VERSIONS=(4.12 4.13 4.14 4.15 4.16 4.17 4.18)
+OCP_VERSIONS=(4.16)
 
 # Old (tag-based) image:
-NEW_BUNDLE="quay.io/redhat-user-workloads/ocp-isc-tenant/file-integrity-operator-bundle:release-1.3"
+NEW_BUNDLE="quay.io/redhat-user-workloads/ocp-isc-tenant/file-integrity-operator-bundle-release:release-1.3"
 
 # New registry/repo to use, but we’ll attach the old image’s actual digest.
 REDHAT_REGISTRY_REPO="registry.redhat.io/compliance/openshift-file-integrity-operator-bundle"
@@ -56,7 +56,12 @@ for OCP_V in "${OCP_VERSIONS[@]}"; do
   echo "Last entry in stable channel is: ${LAST_NAME}"
 
   # # --- 1) Render the new bundle into a temp file ---
-  opm render "${NEW_BUNDLE}" --output=yaml >> "${CATALOG}"
+  if [[ "$OCP_V" =~ ("4.12"|"4.13"|"4.14"|"4.15"|"4.16") ]]; then
+    opm render "${NEW_BUNDLE}" --output=yaml >> "${CATALOG}"
+  else
+    opm render "${NEW_BUNDLE}" --output=yaml --migrate-level bundle-object-to-csv-metadata >> "${CATALOG}"
+  fi
+
 
   # 2) In-place update: remove any old entry named CSV_NEW, then add one new entry.
   yq eval -i -I1 "
