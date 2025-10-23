@@ -1,6 +1,5 @@
 #! /bin/bash
 set -x
-OCP_VERSIONS=4.18
 for VERSION in ${OCP_VERSIONS}
 do
     CONTAINERFILE="Containerfile-rhel-9.in"
