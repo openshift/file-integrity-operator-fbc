@@ -12,7 +12,7 @@ NEW_BUNDLE="quay.io/redhat-user-workloads/ocp-isc-tenant/file-integrity-operator
 REDHAT_REGISTRY_REPO="registry.redhat.io/compliance/openshift-file-integrity-operator-bundle"
 
 # (Optional) Some additional parameters you might use later
-OP_V="1.3.6"
+OP_V="1.3.7"
 CSV_NEW="file-integrity-operator.v${OP_V}"
 SKIP_RANGE=">=1.0.0 <${OP_V}"
 
