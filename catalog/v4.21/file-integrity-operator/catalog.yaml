@@ -41,6 +41,9 @@ entries:
   - name: file-integrity-operator.v1.4.0
     replaces: file-integrity-operator.v1.3.8
     skipRange: '>=1.0.0 <1.4.0'
+  - name: file-integrity-operator.v1.4.1
+    replaces: file-integrity-operator.v1.4.0
+    skipRange: '>=1.0.0 <1.4.1'
 name: stable
 package: file-integrity-operator
 schema: olm.channel
@@ -1078,5 +1081,110 @@ relatedImages:
   - image: registry.redhat.io/compliance/openshift-file-integrity-operator-bundle@sha256:813c9713c4e2e5a1c26b3c1d0b9fbdff9b0eb7cc966e4aa54620822890965891
     name: ""
   - image: registry.redhat.io/compliance/openshift-file-integrity-rhel8-operator@sha256:16c6e7379647c265fd9d06c8b716de753b00cccc9a818d4ca5c1ccb85b63c408
+    name: ""
+schema: olm.bundle
+---
+image: registry.redhat.io/compliance/openshift-file-integrity-operator-bundle@sha256:9cf177e68d369c87eaa4ad173ee6bf995b45c1b0763811b7b3bec2cca68c01a4
+name: file-integrity-operator.v1.4.1
+package: file-integrity-operator
+properties:
+  - type: olm.gvk
+    value:
+      group: fileintegrity.openshift.io
+      kind: FileIntegrity
+      version: v1alpha1
+  - type: olm.gvk
+    value:
+      group: fileintegrity.openshift.io
+      kind: FileIntegrityNodeStatus
+      version: v1alpha1
+  - type: olm.package
+    value:
+      packageName: file-integrity-operator
+      version: 1.4.1
+  - type: olm.csv.metadata
+    value:
+      annotations:
+        alm-examples: |-
+          [
+            {
+              "apiVersion": "fileintegrity.openshift.io/v1alpha1",
+              "kind": "FileIntegrity",
+              "metadata": {
+                "name": "example-fileintegrity",
+                "namespace": "openshift-file-integrity"
+              },
+              "spec": {
+                "config": {},
+                "debug": false
+              }
+            }
+          ]
+        capabilities: Seamless Upgrades
+        categories: Monitoring,Security
+        createdAt: "2026-08-04T11:18:37Z"
+        features.operators.openshift.io/disconnected: "true"
+        features.operators.openshift.io/fips-compliant: "true"
+        features.operators.openshift.io/proxy-aware: "false"
+        features.operators.openshift.io/tls-profiles: "false"
+        features.operators.openshift.io/token-auth-aws: "false"
+        features.operators.openshift.io/token-auth-azure: "false"
+        features.operators.openshift.io/token-auth-gcp: "false"
+        olm.skipRange: '>=1.0.0 <1.4.1'
+        operatorframework.io/cluster-monitoring: "true"
+        operatorframework.io/suggested-namespace: openshift-file-integrity
+        operators.openshift.io/infrastructure-features: '["disconnected", "fips"]'
+        operators.openshift.io/valid-subscription: '["OpenShift Kubernetes Engine", "OpenShift Container Platform", "OpenShift Platform Plus"]'
+        operators.operatorframework.io/builder: operator-sdk-v1.27.0
+        operators.operatorframework.io/project_layout: go.kubebuilder.io/v3
+        repository: https://github.com/openshift/file-integrity-operator
+      apiServiceDefinitions: {}
+      crdDescriptions:
+        owned:
+          - description: FileIntegrity is the Schema for the fileintegrities API
+            displayName: File Integrity
+            kind: FileIntegrity
+            name: fileintegrities.fileintegrity.openshift.io
+            version: v1alpha1
+          - description: FileIntegrityNodeStatus defines the status of a specific node
+            kind: FileIntegrityNodeStatus
+            name: fileintegritynodestatuses.fileintegrity.openshift.io
+            version: v1alpha1
+      description: An operator that manages file integrity checks on nodes.
+      displayName: File Integrity Operator
+      installModes:
+        - supported: true
+          type: OwnNamespace
+        - supported: true
+          type: SingleNamespace
+        - supported: false
+          type: MultiNamespace
+        - supported: true
+          type: AllNamespaces
+      keywords:
+        - Integrity
+        - security
+      labels:
+        operatorframework.io/arch.amd64: supported
+        operatorframework.io/arch.ppc64le: supported
+        operatorframework.io/arch.s390x: supported
+        operatorframework.io/os.linux: supported
+        operatorframework.io/os.zos: supported
+      links:
+        - name: File Integrity Operator upstream repo
+          url: https://github.com/openshift/file-integrity-operator
+        - name: File Integrity Operator documentation
+          url: https://docs.openshift.com/container-platform/latest/security/file_integrity_operator/file-integrity-operator-understanding.html
+      maintainers:
+        - email: support@redhat.com
+          name: Red Hat Support
+      maturity: alpha
+      provider:
+        name: Red Hat
+        url: https://github.com/openshift/file-integrity-operator
+relatedImages:
+  - image: registry.redhat.io/compliance/openshift-file-integrity-operator-bundle@sha256:9cf177e68d369c87eaa4ad173ee6bf995b45c1b0763811b7b3bec2cca68c01a4
+    name: ""
+  - image: registry.redhat.io/compliance/openshift-file-integrity-rhel8-operator@sha256:d682b9f199fd2bd20ed19dd2846a5af0a5e0364d58df088ddd90ca9bb8939bcb
     name: ""
 schema: olm.bundle
