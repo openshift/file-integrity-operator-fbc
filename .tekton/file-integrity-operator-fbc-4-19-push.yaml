@@ -102,6 +102,22 @@ spec:
         default: 'true'
         description: Use the package registry proxy when prefetching dependencies
         type: string
+      - name: source-date-epoch
+        type: string
+        default: ''
+        description: Sets the image created time and the SOURCE_DATE_EPOCH build argument. On its own, it does not change file timestamps inside the layers (set rewrite-timestamp to "true" for that). Leave empty to keep the actual build time.
+      - name: rewrite-timestamp
+        type: string
+        default: 'false'
+        description: When "true", clamp file modification times in the image layers to at most source-date-epoch. Does nothing unless source-date-epoch is set.
+      - name: omit-history
+        type: string
+        default: 'false'
+        description: When "true", omit the build history (history timestamps, layer metadata, etc.) from the resulting image.
+      - name: enable-cache-proxy
+        default: 'false'
+        description: Enable cache proxy configuration
+        type: string
     results:
       - description: ""
         name: IMAGE_URL
@@ -126,7 +142,9 @@ spec:
             - name: kind
               value: task
           resolver: bundles
-        params: []
+        params:
+          - name: enable-cache-proxy
+            value: $(params.enable-cache-proxy)
       - name: clone-repository
         params:
           - name: url
@@ -213,6 +231,16 @@ spec:
             value: "true"
           - name: BUILDAH_FORMAT
             value: $(params.buildah-format)
+          - name: SOURCE_DATE_EPOCH
+            value: $(params.source-date-epoch)
+          - name: REWRITE_TIMESTAMP
+            value: $(params.rewrite-timestamp)
+          - name: OMIT_HISTORY
+            value: $(params.omit-history)
+          - name: HTTP_PROXY
+            value: $(tasks.init.results.http-proxy)
+          - name: NO_PROXY
+            value: $(tasks.init.results.no-proxy)
         runAfter:
           - clone-repository
         taskRef:
