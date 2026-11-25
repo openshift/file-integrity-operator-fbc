@@ -45,6 +45,9 @@ entries:
   - name: file-integrity-operator.v1.5.0
     replaces: file-integrity-operator.v1.4.1
     skipRange: '>=1.0.0 <1.5.0'
+  - name: file-integrity-operator.v1.6.0
+    replaces: file-integrity-operator.v1.5.0
+    skipRange: '>=1.0.0 <1.6.0'
   name: stable
   package: file-integrity-operator
   schema: olm.channel
@@ -77,6 +80,8 @@ entries:
 - image: registry.redhat.io/compliance/openshift-file-integrity-operator-bundle@sha256:c38526d3744cb4f6b2487656c617a8bf40dd996d6e8ad903aa75a69050e290c8
   schema: olm.bundle
 - image: registry.redhat.io/compliance/openshift-file-integrity-operator-bundle@sha256:bafc11174a80529da7f954f1636d3b3f83e4de63c445210293b20eee04527a3b
+  schema: olm.bundle
+- image: registry.redhat.io/compliance/openshift-file-integrity-operator-bundle@sha256:024ad0abd1ae8a7f5f33b06bbb613a1fac3733f2b1b90106d4f12dc6d2a3fd3a
   schema: olm.bundle
 schema: olm.template.basic
 
